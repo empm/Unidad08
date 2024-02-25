@@ -86,3 +86,21 @@ public class Punt {
         return "(" + this.x + "," + this.y + ")";
     }
 }
+
+class Poligono {
+    // Atributos
+    Punt[] arrayPuntos;
+
+    // Constructor
+    public Poligono(Punt[] arrayPuntos) {
+
+    }
+
+    // Getters & Setters
+
+    // Metodos
+    public void trasladar(double pX, double pY) {
+        
+    }
+
+}
