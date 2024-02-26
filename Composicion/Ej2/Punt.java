@@ -15,6 +15,8 @@ package Composicion.Ej2;
  * Utilizando la clase Punto del ejercicio anterior, escribe una clase Polígono.
  *
  * Esta clase tiene como atributo un array de objetos Punt.
+ * 
+ * // to-do
  * Se consideran adyacentes los objetos Punto que estén
  * en celdas consecutivas del array y los puntos que están
  * en la primera y última celda.
@@ -44,39 +46,38 @@ package Composicion.Ej2;
 public class Punt {
 
     // Atributos
-    private double x;
-    private double y;
-    private double distancia;
+    private int x;
+    private int y;
+    private int distancia;
 
     // Constructor
-    public Punt(double x, double y, double distancia) {
+    public Punt(int x, int y) {
         this.x = x;
         this.y = y;
-        this.distancia = distancia;
     }
 
     // Getters & Setters
-    public double getX() {
+    public int getX() {
         return x;
     }
 
-    public double getY() {
+    public int getY() {
         return y;
     }
 
-    public double getDistancia() {
+    public int getDistancia() {
         return distancia;
     }
 
-    public void setX(double x) {
+    public void setX(int x) {
         this.x = x;
     }
 
-    public void setY(double y) {
+    public void setY(int y) {
         this.y = y;
     }
 
-    public void setDistancia(double distancia) {
+    public void setDistancia(int distancia) {
         this.distancia = distancia;
     }
 
@@ -84,6 +85,24 @@ public class Punt {
     @Override
     public String toString() {
         return "(" + this.x + "," + this.y + ")";
+    }
+
+    public static void main(String[] args) {
+        Punt[] arrayPunts = new Punt[4];
+        arrayPunts[0] = new Punt(0, 0);
+        arrayPunts[1] = new Punt(2, 0);
+        arrayPunts[2] = new Punt(2, 2);
+        arrayPunts[3] = new Punt(0, 2);
+
+        for (Punt punt : arrayPunts) {
+            System.out.println(punt.toString());
+        }
+
+        Poligono poli = new Poligono(arrayPunts);
+
+        poli.escalar(4, -3);
+        poli.mostrar();
+        
     }
 }
 
@@ -93,14 +112,41 @@ class Poligono {
 
     // Constructor
     public Poligono(Punt[] arrayPuntos) {
-
+        this.arrayPuntos = arrayPuntos;
     }
 
-    // Getters & Setters
-
     // Metodos
-    public void trasladar(double pX, double pY) {
-        
+    public void trasladar(int pX, int pY) {
+        for (Punt i : arrayPuntos) {
+            i.setX(pX);
+            i.setY(pY);
+        }
+    }
+
+    public void escalar(int pX, int pY) {
+        for (Punt punt : arrayPuntos) {
+            punt.setX(punt.getX() + pX);
+            punt.setY(punt.getY() + pY);
+        }
+    }
+
+    public int numVertex() {
+        int count = 0;
+        for (Punt i : arrayPuntos) {
+            count++;
+        }
+        return count;
+    }
+
+    public int perimetro() {
+        return 0;
+    }
+
+    
+    public void mostrar() {
+        for (Punt punt : arrayPuntos) {
+            System.out.println(punt);
+        }
     }
 
 }
