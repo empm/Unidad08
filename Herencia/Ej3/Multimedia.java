@@ -97,10 +97,10 @@ package Herencia.Ej3;
 public class Multimedia {
 
     // Atributos
-    private String titulo;
-    private String autor;
-    private Format formato;
-    private double duracion;
+    protected String titulo;
+    protected String autor;
+    protected Format formato;
+    protected double duracion;
 
     // Constructor
     public Multimedia(String titulo, String autor, Format formato, double duracion) {
@@ -151,7 +151,6 @@ public class Multimedia {
 }
 
 enum Format {
-
     // wav,mp3, midi, avi, mov, mp4, cdAudio i dvd.
     WAV,
     MP3,
@@ -161,4 +160,41 @@ enum Format {
     MP4,
     CDAUDIO,
     DVD;
+}
+
+class Pelicula extends Multimedia {
+
+    // Atributos
+    private String actorPrincipal;
+    private String actrizPrincipal;
+
+    // Constructor
+    public Pelicula(String titulo, String autor, Format formato, double duracion, String actorPrincipal,
+            String actrizPrincipal) {
+        super(titulo, autor, formato, duracion);
+
+        if (actorPrincipal == null && actrizPrincipal == null) {
+            this.actorPrincipal = "Actor por defecto";
+            this.actrizPrincipal = "Actriz por defecto";
+        } else {
+            this.actorPrincipal = actorPrincipal;
+            this.actrizPrincipal = actrizPrincipal;
+        }
+    }
+
+    // Getters & Setters
+    public String getActorPrincipal() {
+        return actorPrincipal;
+    }
+
+    public String getActrizPrincipal() {
+        return actrizPrincipal;
+    }
+
+    // Metodos
+    @Override
+    public String toString() {
+        return super.toString() + "\nActor principal: " + this.actorPrincipal +
+                "\nActriz principal: " + this.actrizPrincipal;
+    }
 }
