@@ -96,4 +96,17 @@ package Herencia.Ej3;
  */
 public class Multimedia {
 
+    // Atributos
+    private String titulo;
+    private String autor;
+    private String formato;
+    private double duracion;
+
+    // Constructor
+
+    
+    // Getters & Setters
+
+
+    // Metodos
 }
