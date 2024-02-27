@@ -165,8 +165,8 @@ enum Format {
 class Pelicula extends Multimedia {
 
     // Atributos
-    private String actorPrincipal;
-    private String actrizPrincipal;
+    protected String actorPrincipal;
+    protected String actrizPrincipal;
 
     // Constructor
     public Pelicula(String titulo, String autor, Format formato, double duracion, String actorPrincipal,
@@ -197,4 +197,18 @@ class Pelicula extends Multimedia {
         return super.toString() + "\nActor principal: " + this.actorPrincipal +
                 "\nActriz principal: " + this.actrizPrincipal;
     }
+}
+
+class ListaMultimedia {
+
+    // Atributos
+
+
+    // Constructor
+
+
+    // Getters & Setters
+
+
+    // Metodos
 }
