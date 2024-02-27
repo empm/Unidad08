@@ -202,13 +202,38 @@ class Pelicula extends Multimedia {
 class ListaMultimedia {
 
     // Atributos
+    public Multimedia[] arrayMultimedia;
+    public int contadorObjetos;
 
-
+    
     // Constructor
-
+    public ListaMultimedia(int numMaxObjetos){}
+    
 
     // Getters & Setters
 
-
     // Metodos
+    /* TO-DO */
+    public int size(){
+        return 0;
+    }
+
+    /* TO-DO */
+    public boolean add(Multimedia m){
+        return true;
+    }
+
+    /* TO-DO */
+    public Multimedia getObjeto(int posicion){
+        return arrayMultimedia;
+    }
+
+    /* TO-DO */
+    public int indexOf(Multimedia m){
+        return 0;
+    }
+
+    public String toString(){
+        return "";
+    }
 }
