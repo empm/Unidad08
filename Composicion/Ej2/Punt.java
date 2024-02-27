@@ -99,10 +99,9 @@ public class Punt {
         }
 
         Poligono poli = new Poligono(arrayPunts);
-
         poli.escalar(4, -3);
         poli.mostrar();
-        
+
     }
 }
 
@@ -142,7 +141,6 @@ class Poligono {
         return 0;
     }
 
-    
     public void mostrar() {
         for (Punt punt : arrayPuntos) {
             System.out.println(punt);
