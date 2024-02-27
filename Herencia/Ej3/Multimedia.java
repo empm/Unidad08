@@ -99,14 +99,66 @@ public class Multimedia {
     // Atributos
     private String titulo;
     private String autor;
-    private String formato;
+    private Format formato;
     private double duracion;
 
     // Constructor
+    public Multimedia(String titulo, String autor, Format formato, double duracion) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.formato = formato;
+        this.duracion = duracion;
+    }
 
-    
     // Getters & Setters
+    public String getTitulo() {
+        return titulo;
+    }
 
+    public String getAutor() {
+        return autor;
+    }
+
+    public Format getFormato() {
+        return formato;
+    }
+
+    public double getDuracion() {
+        return duracion;
+    }
 
     // Metodos
+    @Override
+    public String toString() {
+        return "Autor: " + this.autor +
+                "\nFormato: " + this.formato +
+                "\nDuracion: " + this.duracion;
+    }
+
+    /*
+     * Finalment un mètode equals() que rep un objecte de tipus Multimèdia
+     * i retorna true en cas que el títol i l'autor siguen iguals
+     * als de l'objecte que anomena al mètode i false en cas contrari.
+     */
+
+    public boolean equals(Multimedia m) {
+        if (titulo.equalsIgnoreCase(m.autor))
+            return true;
+        else
+            return false;
+    }
+
+}
+
+enum Format {
+
+    // wav,mp3, midi, avi, mov, mp4, cdAudio i dvd.
+    WAV,
+    MP3,
+    MIDI,
+    AVI,
+    MOV,
+    MP4,
+    CDAUDIO,
+    DVD;
 }
