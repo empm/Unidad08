@@ -130,7 +130,8 @@ public class Multimedia {
     // Metodos
     @Override
     public String toString() {
-        return "Autor: " + this.autor +
+        return "Titulo: " + this.titulo +
+                "\nAutor: " + this.autor +
                 "\nFormato: " + this.formato +
                 "\nDuracion: " + this.duracion;
     }
