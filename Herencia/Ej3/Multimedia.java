@@ -205,35 +205,52 @@ class ListaMultimedia {
     public Multimedia[] arrayMultimedia;
     public int contadorObjetos;
 
-    
     // Constructor
-    public ListaMultimedia(int numMaxObjetos){}
-    
+    public ListaMultimedia(int numMaxObjetos) {
+        arrayMultimedia = new Multimedia[numMaxObjetos];
+    }
 
     // Getters & Setters
 
     // Metodos
-    /* TO-DO */
-    public int size(){
-        return 0;
+    public int size() {
+        int count = 0;
+        for (Multimedia i : arrayMultimedia) {
+            count++;
+        }
+        return count;
     }
 
-    /* TO-DO */
-    public boolean add(Multimedia m){
+    public boolean add(Multimedia m) {
+        int index;
+        for (int i = 0; i < arrayMultimedia.length; i++) {
+            if (arrayMultimedia[i] == arrayMultimedia[size() - 1]) {
+
+            }
+            index = i; // saber en que posicion est
+
+        }
+
         return true;
     }
 
-    /* TO-DO */
-    public Multimedia getObjeto(int posicion){
-        return arrayMultimedia;
+    public Multimedia getObjeto(int posicion) {
+        return arrayMultimedia[posicion];
     }
 
-    /* TO-DO */
-    public int indexOf(Multimedia m){
-        return 0;
+    public int indexOf(Multimedia m) {
+        int posicion = -1;
+        for (int i = 0; i < arrayMultimedia.length; i++) {
+            if (arrayMultimedia[i] != m) {
+                return -1;
+            } else
+                posicion = i;
+        }
+
+        return posicion;
     }
 
-    public String toString(){
-        return "";
+    public String toString() {
+        return arrayMultimedia.toString();
     }
 }
