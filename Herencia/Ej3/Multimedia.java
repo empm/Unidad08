@@ -143,10 +143,10 @@ public class Multimedia {
      */
 
     public boolean equals(Multimedia m) {
-        if (titulo.equalsIgnoreCase(m.autor))
-            return true;
-        else
-            return false;
+        boolean equals = m.titulo.equalsIgnoreCase(this.titulo) &&
+        m.autor.equalsIgnoreCase(this.autor);
+
+        return equals;
     }
 
 }
